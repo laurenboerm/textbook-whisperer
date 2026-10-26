@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Textbook Whisperer — make it click.</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<aside class="library">
+  <a class="brand" href="/" aria-label="Textbook Whisperer home"><span class="logo">w.</span><span>textbook<br><strong>whisperer</strong></span></a>
+  <div class="library-title"><span>YOUR BOOKSHELF</span><span id="count">0</span></div>
+  <label class="upload" id="dropzone"><span class="upload-icon">＋</span><strong>Add your material</strong><small>Drop a PDF or click to browse</small><small>Textbooks & slides · up to 25 MB</small><input type="file" id="upload" accept="application/pdf" multiple></label>
+  <div id="documents" class="documents"></div>
+  <button class="sample" id="sample">＋ Try the biology sample</button>
+  <div class="library-bottom"><span class="privacy-dot"></span><strong>Your desk. Your data.</strong><p>Documents stay on this computer.<br>Powered by open-weight AI.</p><button id="setup">Model setup ↗</button></div>
+</aside>
+<main>
+  <header><div class="breadcrumb">STUDY SPACE <span>/</span> A little less lost.</div><button id="status" class="status">Checking local model…</button></header>
+  <section class="workspace">
+    <div class="intro"><div class="eyebrow">LESS PANIC. MORE “OH, I GET IT.”</div><h1>Big textbook.<br><em>Small lightbulb moment.</em></h1><p>Ask your course material anything. Get an explanation<br class="desktop"> that makes sense, with the page to back it up.</p></div>
+    <div class="mode-row"><span>EXPLAIN IT TO ME</span><div class="segmented" role="group" aria-label="Explanation style"><button id="standard" aria-pressed="true">By the book</button><button id="skipped" aria-pressed="false">☕ I skipped class</button></div></div>
+    <p class="mode-note" id="mode-note">The concepts, the details, and the evidence.</p>
+    <div class="conversation" id="conversation" aria-live="polite"><div class="starter-label">A GOOD QUESTION IS A GOOD START</div><div class="starters"><button data-question="How does photosynthesis work?">Explain the big idea <span>↗</span><small>How does photosynthesis work?</small></button><button data-question="How do the light reactions and Calvin cycle connect?">Connect the dots <span>↗</span><small>Light reactions → Calvin cycle</small></button><button data-question="What is the role of ATP and NADPH?">Untangle a concept <span>↗</span><small>What do ATP and NADPH actually do?</small></button></div></div>
+    <div id="notice" role="status"></div>
+    <form id="chat"><label class="sr-only" for="question">Your question</label><textarea id="question" rows="2" maxlength="2000" placeholder="What’s the thing that isn’t clicking?" required></textarea><div class="composer-bottom"><label class="preview-toggle"><input type="checkbox" id="preview" checked> Source preview <span>(no model needed)</span></label><button type="submit" id="send">Ask whisperer <span>↑</span></button></div></form>
+    <footer><span>Grounded in your pages. Built for your brain.</span><span>Check citations · AI can make mistakes</span></footer>
+  </section>
+</main>
+<dialog id="source-dialog"><button class="close" aria-label="Close source">×</button><div class="eyebrow">STRAIGHT FROM THE SOURCE</div><h2 id="source-title"></h2><blockquote id="source-text"></blockquote><a id="source-link" target="_blank" rel="noopener">Open original PDF ↗</a><p class="fine">Page numbers refer to PDF pages, which may differ from printed page labels.</p></dialog>
+<dialog id="setup-dialog"><button class="close" aria-label="Close setup">×</button><div class="eyebrow">YOUR LOCAL STUDY BUDDY</div><h2>Bring the AI to your desk.</h2><p>Install Ollama, then download the open-weight Qwen3 model:</p><pre>ollama pull qwen3:4b</pre><p>Keep Ollama running. Turn off <strong>Source preview</strong> to generate explanations. Your first answer may take a minute while the model loads.</p><a href="https://ollama.com/download" target="_blank" rel="noopener">Get Ollama ↗</a><p class="fine">Preview retrieves passages without AI. Scanned PDFs require OCR first. Export slides as PDF before adding them.</p></dialog>
+<script src="/app.js" type="module"></script>
+</body></html>

@@ -1,0 +1,11 @@
+{
+  "name": "textbook-whisperer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local, open-weight AI study companion with verifiable page citations",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.mjs", "test": "node --test" },
+  "dependencies": { "pdfjs-dist": "5.4.624" }
+}
